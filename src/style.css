@@ -1,0 +1,95 @@
+ body {
+   margin: 100px auto;
+   box-sizing: border-box;
+   width: 700px;
+   border: solid rgb(58, 209, 255) 3px;
+   box-shadow: 5px 6px 10px rgba(0, 0, 0, 0.3);
+   color: rgb(89, 88, 88);
+   font-family: 'Kanit', sans-serif;
+ }
+
+ img {
+   width: 65px;
+
+ }
+
+ .main-img {
+   width: 100px;
+   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+   border-radius: 5px;
+ }
+
+ form {
+   padding: 30px 0px 10px 30px;
+ }
+
+ .btn {
+   background-color: green;
+   border-color: green;
+   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+
+ }
+
+ .btn-current {
+   text-align: right;
+   margin-right: 70px;
+ }
+
+ .form-control {
+   border-color: green;
+   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+ }
+
+ .temp {
+   font-size: 40px;
+
+ }
+
+ .scale {
+   font-size: 20px;
+   font-family: monospace;
+
+ }
+
+ .celsius {
+   text-decoration: none;
+ }
+
+ .fahrenheit {
+   text-decoration: none;
+ }
+
+ .climate {
+   font-size: 14px;
+   padding: 0 0 0 20px;
+ }
+
+ .city {
+   text-align: right;
+ }
+
+ .col-2 {
+   padding: 30px 0;
+   width: min-content;
+ }
+
+ .weekday {
+   font-size: 20px;
+   color: rgb(168, 166, 166);
+ }
+
+ .weather {
+   padding: 10px 50px 30px 30px;
+ }
+
+ .forecast {
+   margin: 0 5px 5px 7px;
+   box-sizing: border-box;
+   width: 680px;
+   border: solid rgb(58, 209, 255) 3px;
+   box-shadow: 5px 6px 5px rgba(0, 0, 0, 0.3);
+ }
+
+ .light {
+   color: rgb(168, 166, 166);
+ }
