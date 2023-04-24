@@ -20,100 +20,104 @@
 </head>
 
 <body>
+  <div class="body">
+    <form>
+      <div class="row">
+        <div class="col-9">
+          <input type="text" placeholder="search your city" class="form-control" id="newCity" />
+        </div>
+        <div class="col-3">
+          <input type="submit" value="search" class="btn btn-primary mb-3" />
+        </div>
+      </div>
+      <div class="btn-current">
+        <input type="submit" value="current" class="btn btn-primary mb-3" />
+      </div>
+    </form>
 
-  <form>
-    <div class="row">
-      <div class="col-9">
-        <input type="text" placeholder="search your city" class="form-control" id="newCity" />
+    <div class="row weather">
+      <div class="col-2" id="currentIcon">
+        <img src="img/clear.png" alt="Sunny" class="main-img">
       </div>
-      <div class="col-3">
-        <input type="submit" value="search" class="btn btn-primary mb-3" />
-      </div>
-    </div>
-    <div class="btn-current">
-      <input type="submit" value="current" class="btn btn-primary mb-3" />
-    </div>
-  </form>
+      <div class="col">
+        <div class="temp">
+          <span class="temperatur" id="temperature">
+            20</span>
+          <span class="scale">
+            <a href="" class="celsius">°C</a>
+            |<a href="" class="fahrenheit" id="fahrenheit">°F</a>
+          </span>
+        </div>
+        <div class="climate">
+          <div id="currentCondition">
+            Fair
+          </div>
+          <div id="humidity">
+            Humidity: 52%
+          </div>
+          <div id="wind">
+            Wind: 8m/s
+          </div>
 
-  <div class="row weather">
-    <div class="col-2" id="currentIcon">
-      <img src="img/clear.png" alt="Sunny" class="main-img">
-    </div>
-    <div class="col">
-      <div class="temp">
-        <span class="temperatur" id="temperature">
-          20</span>
-        <span class="scale">
-          <a href="" class="celsius">°C</a>
-          |<a href="" class="fahrenheit" id="fahrenheit">°F</a>
-        </span>
+        </div>
       </div>
-      <div class="climate">
-        <div id="currentCondition">
-          Fair
-        </div>
-        <div id="humidity">
-          Humidity: 52%
-        </div>
-        <div id="wind">
-          Wind: 8m/s
-        </div>
+      <div class="col city">
+        <h1>
+          <div id="currentCity">
+            Buenos Aires
+          </div>
+          <div class="weekday">
+            Saturday
+          </div>
+        </h1>
+      </div>
+    </div>
 
+    <div class="row forecast">
+      <div class="col">
+        Sunday
+        <br />
+        <img src="img/clear.png" alt="Sunny">
+        <div class="temperature">
+          26° <span class="light">18°</span>
+        </div>
       </div>
-    </div>
-    <div class="col city">
-      <h1>
-        <div id="currentCity">
-          Buenos Aires
+      <div class="col">
+        Monday
+        <br />
+        <img src="img/clouds.png" alt="Cloudy">
+        <div class="temperature">
+          26° <span class="light">18°</span>
         </div>
-        <div class="weekday">
-          Saturday
+      </div>
+      <div class="col">
+        Tuesday
+        <br />
+        <img src="img/clear.png" alt="Sunny">
+        <div class="temperature">
+          26° <span class="light">18°</span>
         </div>
-      </h1>
+      </div>
+      <div class="col">
+        Wednesday
+        <br />
+        <img src="img/cloudy.png" alt="Overcast">
+        <div class="temperature">
+          26° <span class="light">18°</span>
+        </div>
+      </div>
+      <div class="col">
+        Thursday
+        <br />
+        <img src="img/cloudy.png" alt="Overcast">
+        <div class="temperature">
+          26° <span class="light">18°</span>
+        </div>
+      </div>
     </div>
   </div>
-
-  <div class="row forecast">
-    <div class="col">
-      Sunday
-      <br />
-      <img src="img/clear.png" alt="Sunny">
-      <div class="temperature">
-        26° <span class="light">18°</span>
-      </div>
-    </div>
-    <div class="col">
-      Monday
-      <br />
-      <img src="img/clouds.png" alt="Cloudy">
-      <div class="temperature">
-        26° <span class="light">18°</span>
-      </div>
-    </div>
-    <div class="col">
-      Tuesday
-      <br />
-      <img src="img/clear.png" alt="Sunny">
-      <div class="temperature">
-        26° <span class="light">18°</span>
-      </div>
-    </div>
-    <div class="col">
-      Wednesday
-      <br />
-      <img src="img/cloudy.png" alt="Overcast">
-      <div class="temperature">
-        26° <span class="light">18°</span>
-      </div>
-    </div>
-    <div class="col">
-      Thursday
-      <br />
-      <img src="img/cloudy.png" alt="Overcast">
-      <div class="temperature">
-        26° <span class="light">18°</span>
-      </div>
-    </div>
+  <div class="github-link">
+    <a href="https://github.com/daryavolnaya/weather-app" target="_blank" class="github-link">My GitHub</a>
   </div>
   <script src="src/js.js"></script>
 </body>

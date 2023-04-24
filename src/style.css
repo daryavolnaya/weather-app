@@ -1,5 +1,6 @@
- body {
-   margin: 100px auto;
+ .body {
+   display: block;
+   margin: 0 auto;
    box-sizing: border-box;
    width: 700px;
    border: solid rgb(58, 209, 255) 3px;
@@ -92,4 +93,11 @@
 
  .light {
    color: rgb(168, 166, 166);
+ }
+
+ .github-link {
+   font-size: 16px;
+   text-align: center;
+   text-decoration: none;
+   margin: 10px;
  }
