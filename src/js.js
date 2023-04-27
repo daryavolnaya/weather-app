@@ -15,45 +15,35 @@ if (currentMinutes < 10) {
 currentMinutes = `0${currentMinutes}`
 };
 let currentTime = (`${currentHours}:${currentMinutes}`);
-
-let weekday = document.querySelector(".weekday");
-weekday.innerHTML = `${day} ${currentTime}`;
-
+document.querySelector(".weekday").innerHTML = `${day} ${currentTime}`;
 
 
 // Display the city name on the page 
 function showSelectedWeather (response){
   document.querySelector("#currentCity").innerHTML = response.data.name;
-  let currentTemperature = Math.round(response.data.main.temp);
-  let degrees = document.querySelector("#temperature");
-  degrees.innerHTML = `${currentTemperature}`;
+  document.querySelector("#temperature").innerHTML = Math.round(response.data.main.temp);
+  document.querySelector("#currentCondition").innerHTML = response.data.weather[0].main;
+  document.querySelector("#humidity").innerHTML = response.data.main.humidity;
+  document.querySelector("#wind").innerHTML = Math.round(response.data.wind.speed);
   let condition = response.data.weather[0].main;
-  let currentCondition = document.querySelector("#currentCondition");
-  currentCondition.innerHTML = `${condition}`
-  let humidity = response.data.main.humidity;
-  let currentHumidity = document.querySelector("#humidity");
-  currentHumidity.innerHTML = `Humidity: ${humidity}%`
-  let wind = Math.round(response.data.wind.speed);
-  let currentWind = document.querySelector("#wind");
-  currentWind.innerHTML = `Wind: ${wind} m/s`;
-  let currentIcon = document.querySelector("#currentIcon");
-  currentIcon.innerHTML = `<img src="img/${condition}.png" alt="Sunny" class="main-img">`;
+  document.querySelector("#currentIcon").innerHTML = `<img src="img/${condition}.png" alt="Sunny" class="main-img">`;
 }
 
+function showCity(city){
+  let apiKey = "96ad27349a64ea1dcdfbe6f4d458c085";
+  let units = "metric";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&&units=${units}`;
+axios.get(apiUrl).then(showSelectedWeather);
+}
 
 function searchCity (event){
-   event.preventDefault();
-  let newCity = document.querySelector("#newCity");
-  let apiKey = "96ad27349a64ea1dcdfbe6f4d458c085";
-let city = newCity.value;
-let units = "metric";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&&units=${units}`;
-axios.get(apiUrl).then(showSelectedWeather);
-
+event.preventDefault();
+let city = document.querySelector("#newCity").value;
+showCity(city);
 }
 
-let form = document.querySelector("form");
-form.addEventListener("submit", searchCity)
+
+document.querySelector("form").addEventListener("submit", searchCity)
 
 
 
@@ -85,23 +75,13 @@ form.addEventListener("submit", searchCity)
 
 // Current button: current position & current temperature
 function showTemperature (response) {
-  let city = response.data.name;
-  let currentTemperature = Math.round(response.data.main.temp);
-  let currentCity = document.querySelector("#currentCity");
-  currentCity.innerHTML = `${city}`;
-  let degrees = document.querySelector("#temperature");
-  degrees.innerHTML = `${currentTemperature}`;
+  document.querySelector("#currentCity").innerHTML = response.data.name;
+  document.querySelector("#temperature").innerHTML = Math.round(response.data.main.temp);
   let condition = response.data.weather[0].main;
-  let currentCondition = document.querySelector("#currentCondition");
-  currentCondition.innerHTML = `${condition}`
-  let humidity = response.data.main.humidity;
-  let currentHumidity = document.querySelector("#humidity");
-  currentHumidity.innerHTML = `Humidity: ${humidity}%`
-  let wind = Math.round(response.data.wind.speed);
-  let currentWind = document.querySelector("#wind");
-  currentWind.innerHTML = `Wind: ${wind} m/s`;
-  let currentIcon = document.querySelector("#currentIcon");
-  currentIcon.innerHTML = `<img src="img/${condition}.png" alt="Sunny" class="main-img">`;
+  document.querySelector("#currentCondition").innerHTML = `${condition}`;
+  document.querySelector("#humidity").innerHTML = response.data.main.humidity;
+  document.querySelector("#wind").innerHTML = Math.round(response.data.wind.speed);
+  document.querySelector("#currentIcon").innerHTML = `<img src="img/${condition}.png" alt="Sunny" class="main-img">`;
  
 }
 
@@ -117,11 +97,10 @@ let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lo
 function turnNavigator () {
 navigator.geolocation.getCurrentPosition(showPosition);
 }
-let currentButton = document.querySelector(".btn-current");
-  currentButton.addEventListener("click", turnNavigator)
+  document.querySelector(".btn-current").addEventListener("click", turnNavigator)
   
 
-
+showCity("Barcelona");
 
 
 
