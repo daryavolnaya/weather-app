@@ -7,7 +7,7 @@
    display: block;
    margin: 50px auto;
    box-sizing: border-box;
-   width: 700px;
+   max-width: 700px;
    border: solid rgb(255, 192, 203) 3px;
    box-shadow: 5px 6px 10px rgba(0, 0, 0, 0.3);
    color: rgb(255, 255, 255);
@@ -27,8 +27,20 @@
    border-radius: 5px;
  }
 
+ .fahrenheit {
+   color: rgb(255, 192, 203);
+ }
+
+ .celsius {
+   color: rgb(255, 192, 203);
+ }
+
  form {
    padding: 30px 0px 10px 30px;
+ }
+
+ li {
+   list-style: none;
  }
 
  .newCity {
@@ -72,16 +84,11 @@
  }
 
  .scale {
+   position: relative;
+   top: -15px;
    font-size: 20px;
    font-family: monospace;
-
- }
-
- .celsius {
-   text-decoration: none;
- }
-
- .fahrenheit {
+   color: rgb(255, 192, 203);
    text-decoration: none;
  }
 
@@ -137,4 +144,15 @@
  .github:hover {
    text-decoration: underline;
    font-size: 17px;
+ }
+
+ .temp .active {
+   color: rgb(255, 192, 203);
+   cursor: default;
+   text-decoration: none;
+ }
+
+ .temp .active:hover {
+   text-decoration: none;
+   color: rgb(255, 192, 203)
  }
