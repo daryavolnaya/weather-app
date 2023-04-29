@@ -61,12 +61,12 @@ event.preventDefault();
 showCity(document.querySelector("#newCity").value);
 }
 
-document.querySelector("form").addEventListener("submit", searchCity)
 
 // Current button: current position & current temperature
 function showTemperature (response) {
+    celsiusTemperature = response.data.main.temp;
   document.querySelector("#currentCity").innerHTML = response.data.name;
-  document.querySelector("#temperature").innerHTML = Math.round(response.data.main.temp);
+  document.querySelector("#temperature").innerHTML = Math.round(celsiusTemperature);
   let condition = response.data.weather[0].main;
   document.querySelector("#currentCondition").innerHTML = `${condition}`;
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;
@@ -86,7 +86,8 @@ function turnNavigator () {
 navigator.geolocation.getCurrentPosition(showPosition);
 }
   document.querySelector(".btn-current").addEventListener("click", turnNavigator)
-  
+  document.querySelector("form").addEventListener("submit", searchCity)
+
 let celsiusTemperature = null;
 let fahrenheit = document.querySelector(".fahrenheit");
 let celsius = document.querySelector(".celsius");
