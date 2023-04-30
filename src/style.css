@@ -5,7 +5,7 @@
 
  .body {
    display: block;
-   margin: 50px auto;
+   margin: 80px auto;
    box-sizing: border-box;
    max-width: 700px;
    border: solid rgb(255, 192, 203) 3px;
@@ -121,6 +121,7 @@
    width: 680px;
    border: solid rgb(255, 192, 203) 3px;
    box-shadow: 5px 6px 5px rgba(0, 0, 0, 0.3);
+   text-align: center;
  }
 
  .light {

@@ -19,6 +19,32 @@ let currentTime = (`${currentHours}:${currentMinutes}`);
 return`${day} ${currentTime}`;
 }
 
+//Forecast
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = `<div class="row">`;
+  let days = [
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  ]
+  days.forEach(function(day) {
+  forecastHTML = forecastHTML + `<div class="col">
+          <div id="forecastDate">${day}</div>
+          <img src="img/clear.png" alt="Sunny">
+          <div class="temperature">
+            26° <span class="light">18°</span>
+          </div>
+        </div>`;
+  })
+  
+        forecastHTML = forecastHTML + `</div>`
+      forecastElement.innerHTML = forecastHTML;
+}
+
+
 // From Celsius to Fahrenheit
 function showFahrenheit(event) {
 event.preventDefault();
@@ -95,6 +121,7 @@ let celsius = document.querySelector(".celsius");
   fahrenheit.addEventListener("click", showFahrenheit);
 
 showCity("Barcelona");
+displayForecast();
 
 
 
