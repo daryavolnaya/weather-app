@@ -1,7 +1,7 @@
 
 // Current time
 function showDate (timestamp) {
-let now = new Date;
+let now = new Date();
 let days = ["Sunday",
   "Monday",
   "Tuesday",
@@ -56,36 +56,43 @@ function displayForecast(response) {
 }
 
 
+
 // From Celsius to Fahrenheit
 function showFahrenheit(event) {
-event.preventDefault();
-let temp = document.querySelector("#temperature");
-let fahr = (celsiusTemperature * 9)/5+32;
-temp.innerHTML = Math.round(fahr);
- let degrees = document.querySelectorAll(".degrees");
+  event.preventDefault();
+  let temp = document.querySelector("#temperature");
+  if (fahrenheitTemperature === null) {
+    fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+  }
+  temp.innerHTML = Math.round(fahrenheitTemperature);
+  let degrees = document.querySelectorAll(".degrees");
   degrees.forEach(function (degree) {
-    let celsiusTemp = degree.innerHTML;
-    let fahrenheitTemp = (celsiusTemp * 9) / 5 + 32;
-    degree.innerHTML = Math.round(fahrenheitTemp);
+    if (degree.dataset.unit === "celsius") {
+      let celsiusTemp = degree.innerHTML;
+      let fahrenheitTemp = (celsiusTemp * 9) / 5 + 32;
+      degree.innerHTML = Math.round(fahrenheitTemp);
+      degree.dataset.unit = "fahrenheit";
+    }
   });
-
-celsius.classList.remove("active");
-fahrenheit.classList.add("active");
-
+  celsius.classList.remove("active");
+  fahrenheit.classList.add("active");
 }
 
-function showCelsius (event) {
-event.preventDefault();
-let temp = document.querySelector("#temperature");
-temp.innerHTML = Math.round(celsiusTemperature);
-let degrees = document.querySelectorAll(".degrees");
+function showCelsius(event) {
+  event.preventDefault();
+  let temp = document.querySelector("#temperature");
+  temp.innerHTML = Math.round(celsiusTemperature);
+  let degrees = document.querySelectorAll(".degrees");
   degrees.forEach(function (degree) {
-    let fahrenheitTemp = degree.innerHTML;
-    let celsiusTemp = ((fahrenheitTemp - 32) * 5) / 9;
-    degree.innerHTML = Math.round(celsiusTemp);
+    if (degree.dataset.unit === "fahrenheit") {
+      let fahrenheitTemp = degree.innerHTML;
+      let celsiusTemp = ((fahrenheitTemp - 32) * 5) / 9;
+      degree.innerHTML = Math.round(celsiusTemp);
+      degree.dataset.unit = "celsius";
+    }
   });
-celsius.classList.add("active");
-fahrenheit.classList.remove("active");
+  celsius.classList.add("active");
+  fahrenheit.classList.remove("active");
 }
 
 function getForecast(coordinates) {
@@ -150,6 +157,7 @@ navigator.geolocation.getCurrentPosition(showPosition);
   document.querySelector("form").addEventListener("submit", searchCity)
 
 let celsiusTemperature = null;
+let fahrenheitTemperature = null;
 let fahrenheit = document.querySelector(".fahrenheit");
 let celsius = document.querySelector(".celsius");
   celsius.addEventListener("click", showCelsius);
