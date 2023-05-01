@@ -1,4 +1,3 @@
-
 // Current time
 function showDate (timestamp) {
 let now = new Date();
@@ -56,43 +55,40 @@ function displayForecast(response) {
 }
 
 
-
 // From Celsius to Fahrenheit
 function showFahrenheit(event) {
-  event.preventDefault();
-  let temp = document.querySelector("#temperature");
-  if (fahrenheitTemperature === null) {
-    fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
-  }
-  temp.innerHTML = Math.round(fahrenheitTemperature);
-  let degrees = document.querySelectorAll(".degrees");
+event.preventDefault();
+let temp = document.querySelector("#temperature");
+let fahr = (celsiusTemperature * 9)/5+32;
+temp.innerHTML = Math.round(fahr);
+ let degrees = document.querySelectorAll(".degrees");
   degrees.forEach(function (degree) {
-    if (degree.dataset.unit === "celsius") {
-      let celsiusTemp = degree.innerHTML;
-      let fahrenheitTemp = (celsiusTemp * 9) / 5 + 32;
-      degree.innerHTML = Math.round(fahrenheitTemp);
-      degree.dataset.unit = "fahrenheit";
-    }
+    let celsiusTemp = degree.innerHTML;
+    let fahrenheitTemp = (celsiusTemp * 9) / 5 + 32;
+    degree.innerHTML = Math.round(fahrenheitTemp);
   });
-  celsius.classList.remove("active");
-  fahrenheit.classList.add("active");
+
+celsius.classList.remove("active");
+fahrenheit.classList.add("active");
+
 }
 
-function showCelsius(event) {
-  event.preventDefault();
-  let temp = document.querySelector("#temperature");
-  temp.innerHTML = Math.round(celsiusTemperature);
-  let degrees = document.querySelectorAll(".degrees");
+  
+  
+  
+
+function showCelsius (event) {
+event.preventDefault();
+let temp = document.querySelector("#temperature");
+temp.innerHTML = Math.round(celsiusTemperature);
+let degrees = document.querySelectorAll(".degrees");
   degrees.forEach(function (degree) {
-    if (degree.dataset.unit === "fahrenheit") {
-      let fahrenheitTemp = degree.innerHTML;
-      let celsiusTemp = ((fahrenheitTemp - 32) * 5) / 9;
-      degree.innerHTML = Math.round(celsiusTemp);
-      degree.dataset.unit = "celsius";
-    }
+    let fahrenheitTemp = degree.innerHTML;
+    let celsiusTemp = ((fahrenheitTemp - 32) * 5) / 9;
+    degree.innerHTML = Math.round(celsiusTemp);
   });
-  celsius.classList.add("active");
-  fahrenheit.classList.remove("active");
+celsius.classList.add("active");
+fahrenheit.classList.remove("active");
 }
 
 function getForecast(coordinates) {
@@ -147,7 +143,7 @@ function showPosition (position) {
   let longitude = position.coords.longitude;
   let units = "metric";
    let apiKey = "96ad27349a64ea1dcdfbe6f4d458c085";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&&units=${units}`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=${units}`
 axios.get(apiUrl).then(showCurrentTemperature);
 }
 function turnNavigator () {
@@ -157,15 +153,9 @@ navigator.geolocation.getCurrentPosition(showPosition);
   document.querySelector("form").addEventListener("submit", searchCity)
 
 let celsiusTemperature = null;
-let fahrenheitTemperature = null;
 let fahrenheit = document.querySelector(".fahrenheit");
 let celsius = document.querySelector(".celsius");
   celsius.addEventListener("click", showCelsius);
   fahrenheit.addEventListener("click", showFahrenheit);
 
 showCity("Barcelona");
-
-
-
-
-  
