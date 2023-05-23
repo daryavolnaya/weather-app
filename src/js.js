@@ -61,12 +61,12 @@ event.preventDefault();
 let temp = document.querySelector("#temperature");
 let fahr = (celsiusTemperature * 9)/5+32;
 temp.innerHTML = Math.round(fahr);
- let degrees = document.querySelectorAll(".degrees");
-  degrees.forEach(function (degree) {
-    let celsiusTemp = degree.innerHTML;
-    let fahrenheitTemp = (celsiusTemp * 9) / 5 + 32;
-    degree.innerHTML = Math.round(fahrenheitTemp);
-  });
+//  let degrees = document.querySelectorAll(".degrees");
+//   degrees.forEach(function (degree) {
+//     let celsiusTemp = degree.innerHTML;
+//     let fahrenheitTemp = (celsiusTemp * 9) / 5 + 32;
+//     degree.innerHTML = Math.round(fahrenheitTemp);
+//   });
 
 celsius.classList.remove("active");
 fahrenheit.classList.add("active");
@@ -81,12 +81,12 @@ function showCelsius (event) {
 event.preventDefault();
 let temp = document.querySelector("#temperature");
 temp.innerHTML = Math.round(celsiusTemperature);
-let degrees = document.querySelectorAll(".degrees");
-  degrees.forEach(function (degree) {
-    let fahrenheitTemp = degree.innerHTML;
-    let celsiusTemp = ((fahrenheitTemp - 32) * 5) / 9;
-    degree.innerHTML = Math.round(celsiusTemp);
-  });
+// let degrees = document.querySelectorAll(".degrees");
+//   degrees.forEach(function (degree) {
+//     let fahrenheitTemp = degree.innerHTML;
+//     let celsiusTemp = ((fahrenheitTemp - 32) * 5) / 9;
+//     degree.innerHTML = Math.round(celsiusTemp);
+//   });
 celsius.classList.add("active");
 fahrenheit.classList.remove("active");
 }
