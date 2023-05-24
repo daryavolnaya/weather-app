@@ -20,64 +20,68 @@
 </head>
 
 <body>
-  <div class="body">
-    <form>
+  <div class="container-sm pink-border">
+    <form class="m-md-4">
       <div class="row">
-        <div class="col-6">
+        <div class="col-6 col-lg-8">
           <input type="text" placeholder="search your city" class="form-control newCity" id="newCity" />
         </div>
-        <div class="col-3">
-          <input type="submit" value="search" class="btn btn-primary mb-3" />
+        <div class="col-3 col-lg-2">
+          <input type="submit" value="search" class="btn btn-primary px-md-5" />
         </div>
-        <div class="col-3 btn-current">
-          <input type="submit" value="current" class="btn btn-primary mb-3" />
+        <div class="col-3 col-lg-2">
+          <input type="submit" value="current" class="btn btn-primary px-md-5 btn-current" />
         </div>
       </div>
-
     </form>
-
-    <div class="row weather">
-      <div class="col-2" id="currentIcon">
-        <img src="img/clear.png" alt="Sunny" class="main-img">
-      </div>
-      <div class="col">
-        <div class="temp bright">
-          <span id="temperature">
-          </span>
-          <span class="scale">
-            <a href="#" class="celsius active">°C</a>|<a href="#" class="fahrenheit" id="fahrenheit">°F</a>
-          </span>
+    <div class="container-fluid">
+      <div class="row weather">
+        <div class="col" id="currentIcon">
+          <img src="img/clear.png" alt="Sunny" class="main-img m-2 object-fit-sm">
         </div>
-        <ul class="climate bright">
-          <li id="currentCondition">
-            Fair
-          </li>
-          <li>
-            Humidity: <span id="humidity">52</span>%
-          </li>
-          <li>
-            Wind: <span id="wind">8</span> m/s
-          </li>
+        <div class="col weather-description">
+          <div class="temp bright">
+            <span id="temperature">
+            </span>
+            <span class="scale">
+              <a href="#" class="celsius active">°C</a>|<a href="#" class="fahrenheit" id="fahrenheit">°F</a>
+            </span>
+          </div>
+          <ul class="climate bright">
+            <li id="currentCondition">
+              Fair
+            </li>
+            <li>
+              Humidity: <span id="humidity">52</span>%
+            </li>
+            <li>
+              Wind: <span id="wind">8</span> m/s
+            </li>
 
-        </ul>
+          </ul>
+        </div>
+        <div class="col-sm-3 location">
+          <h1>
+            <div class="bright" id="currentCity">
+              Buenos Aires
+            </div>
+            <div class="weekday">
+              Saturday
+            </div>
+          </h1>
+        </div>
       </div>
-      <div class="col city">
-        <h1>
-          <div class="bright" id="currentCity">
-            Buenos Aires
-          </div>
-          <div class="weekday">
-            Saturday
-          </div>
-        </h1>
+    </div>
+    <div class="container-fluid">
+      <div class="forecast" id="forecast">
+
       </div>
     </div>
 
-    <div class="forecast" id="forecast">
 
-    </div>
+
   </div>
-  <div class="github-link">
+  <div class="github-link ">
     <a href="https://github.com/daryavolnaya/weather-app" target="_blank" class="github">Open-source code</a> by
     Daria Romaniuk
   </div>

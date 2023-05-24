@@ -38,7 +38,7 @@ function displayForecast(response) {
   let forecastHTML = `<div class="row">`;
 
   forecast.forEach(function(forecastDay, index) {
-    if (index > 0 && index < 6) {
+    if (index > 0 && index < 7) {
   forecastHTML = forecastHTML + `<div class="col">
           <div class="bright" id="forecastDate">${formatDay(forecastDay.dt)}</div>
           <img src="img/${forecastDay.weather[0].main}.png" alt="Sunny">

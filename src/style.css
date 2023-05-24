@@ -1,51 +1,39 @@
  body {
    background-image: url("../img/back.jpg");
-
- }
-
- .body {
-   display: block;
-   margin: 80px auto;
-   box-sizing: border-box;
-   max-width: 700px;
-   border: solid rgb(255, 192, 203) 3px;
-   box-shadow: 5px 6px 10px rgba(0, 0, 0, 0.3);
    color: rgb(168, 166, 166);
    font-family: 'Kanit', sans-serif;
-   background-color: rgba(255, 255, 255, 0.3);
 
- }
-
- .bright {
-   color: rgb(255, 255, 255);
- }
-
- img {
-   width: 65px;
-
- }
-
- .main-img {
-   margin: 0px 30px 0px 30px;
-   width: 100px;
-   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
-   border-radius: 5px;
- }
-
- .fahrenheit {
-   color: rgb(255, 192, 203);
- }
-
- .celsius {
-   color: rgb(255, 192, 203);
  }
 
  form {
-   padding: 30px 0px 10px 30px;
+   margin-top: 10px;
+   margin-bottom: 20px;
  }
 
- li {
-   list-style: none;
+ .form-control {
+   border-color: rgb(0, 63, 52);
+   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+ }
+
+ .pink-border {
+   border: solid rgb(255, 192, 203) 3px;
+   margin-top: 80px;
+   background-color: rgba(255, 255, 255, 0.3);
+   max-width: 950px;
+ }
+
+ .btn {
+   background-color: rgb(0, 63, 52);
+   border-color: rgb(0, 63, 52);
+   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+   margin: 0;
+   padding: 5px;
+ }
+
+ .btn:hover {
+   background-color: rgb(255, 192, 203);
+   border-color: rgb(255, 192, 203);
+   color: rgb(0, 63, 52);
  }
 
  .newCity {
@@ -58,34 +46,29 @@
    box-shadow: 5px 5px 5px rgba(0, 63, 52, 0.3);
  }
 
- .btn {
-   background-color: rgb(0, 63, 52);
-   border-color: rgb(0, 63, 52);
+ .bright {
+   color: rgb(255, 255, 255);
+ }
+
+ li {
+   list-style: none;
+ }
+
+ img {
+   width: 65px;
+
+ }
+
+ .main-img {
+
+   width: 120px;
    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
-   margin: 0;
-   padding: 5px 40px;
+   border-radius: 5px;
+
  }
 
- .col-3 {
-   padding: 0;
-   margin: 0;
- }
-
- .btn:hover {
-   background-color: rgb(255, 192, 203);
-   border-color: rgb(255, 192, 203);
-   color: rgb(0, 63, 52);
- }
-
-
- .form-control {
-   border-color: rgb(0, 63, 52);
-   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
- }
-
- .temp {
-   font-size: 40px;
-
+ #currentIcon {
+   text-align: right;
  }
 
  .scale {
@@ -97,56 +80,17 @@
    text-decoration: none;
  }
 
- .climate {
-   font-size: 14px;
-   padding: 0 0 0 20px;
+ .temp {
+   font-size: 40px;
+
  }
 
- .city {
-   text-align: right;
+ .fahrenheit {
+   color: rgb(255, 192, 203);
  }
 
- .col-2 {
-   padding: 30px 0;
-   width: min-content;
- }
-
- .weekday {
-   font-size: 20px;
-   color: rgb(168, 166, 166);
- }
-
- .weather {
-   padding: 10px 50px 30px 30px;
- }
-
- .forecast {
-   margin: 0 5px 5px 7px;
-   box-sizing: border-box;
-   width: 680px;
-   border: solid rgb(255, 192, 203) 3px;
-   box-shadow: 5px 6px 5px rgba(0, 0, 0, 0.3);
-   text-align: center;
- }
-
-
- .github-link {
-   background-color: rgb(255, 192, 203);
-   font-size: 16px;
-   text-align: center;
-   margin: 10px;
-   font-family: monospace;
- }
-
- .github {
-
-   color: rgb(0, 63, 52);
-   text-decoration: none;
- }
-
- .github:hover {
-   text-decoration: underline;
-   font-size: 17px;
+ .celsius {
+   color: rgb(255, 192, 203);
  }
 
  .temp .active {
@@ -158,4 +102,46 @@
  .temp .active:hover {
    text-decoration: none;
    color: rgb(255, 192, 203)
+ }
+
+ .weather-description {
+   text-align: left;
+ }
+
+ .weekday {
+   font-size: 20px;
+   color: rgb(168, 166, 166);
+ }
+
+ .location {
+   text-align: center;
+ }
+
+ .forecast {
+   margin: 10px auto;
+   box-sizing: border-box;
+   width: 98%;
+   border: solid rgb(255, 192, 203) 3px;
+   box-shadow: 5px 6px 5px rgba(0, 0, 0, 0.3);
+   text-align: center;
+ }
+
+ .github-link {
+   margin: 90px 10px 20px 10px;
+   background-color: rgb(255, 192, 203);
+   font-size: 16px;
+   text-align: center;
+   font-family: monospace;
+   color: black;
+ }
+
+ .github {
+
+   color: rgb(0, 63, 52);
+   text-decoration: none;
+ }
+
+ .github:hover {
+   text-decoration: underline;
+   font-size: 17px;
  }
