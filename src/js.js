@@ -41,7 +41,7 @@ function displayForecast(response) {
     if (index > 0 && index < 7) {
   forecastHTML = forecastHTML + `<div class="col">
           <div class="bright" id="forecastDate">${formatDay(forecastDay.dt)}</div>
-          <img src="img/${forecastDay.weather[0].main}.png" alt="Sunny">
+          <img src="img/${forecastDay.weather[0].main}.png" alt="Sunny" title="${forecastDay.weather[0].description}">
           <div class="temperature">
             <span class="degrees bright">${Math.round(forecastDay.temp.max)}</span><span class="bright">°</span> <span class="degrees">${Math.round(forecastDay.temp.min)}</span>°
           </div>
@@ -107,7 +107,7 @@ function showSelectedTemperature (response){
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;
   document.querySelector("#wind").innerHTML = Math.round(response.data.wind.speed);
   let condition = response.data.weather[0].main;
-  document.querySelector("#currentIcon").innerHTML = `<img src="img/${condition}.png" alt="${response.data.weather[0].description}" class="main-img">`;
+  document.querySelector("#currentIcon").innerHTML = `<img src="img/${condition}.png" alt="${response.data.weather[0].description}" class="main-img" title="${response.data.weather[0].description}">`;
   document.querySelector(".weekday").innerHTML = showDate(response.data.dt *1000);
 getForecast(response.data.coord);
 }
@@ -134,7 +134,7 @@ function showCurrentTemperature (response) {
   document.querySelector("#currentCondition").innerHTML = `${condition}`;
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;
   document.querySelector("#wind").innerHTML = Math.round(response.data.wind.speed);
-  document.querySelector("#currentIcon").innerHTML = `<img src="img/${condition}.png" alt="${response.data.weather[0].description}" class="main-img">`;
+  document.querySelector("#currentIcon").innerHTML = `<img src="img/${condition}.png" alt="${response.data.weather[0].description}" class="main-img" title="${response.data.weather[0].description}">`;
 getForecast(response.data.coord);
 }
 
@@ -148,6 +148,7 @@ axios.get(apiUrl).then(showCurrentTemperature);
 }
 function turnNavigator () {
 navigator.geolocation.getCurrentPosition(showPosition);
+ alert(`A "Request to access location" will now appear. If not, remove the restriction in the device settings.`)
 }
   document.querySelector(".btn-current").addEventListener("click", turnNavigator)
   document.querySelector("form").addEventListener("submit", searchCity)
