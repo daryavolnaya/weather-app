@@ -101,6 +101,7 @@ axios.get(apiUrl).then(displayForecast);
 // Display the city name on the page 
 function showSelectedTemperature (response){
   celsiusTemperature = response.data.main.temp;
+  document.querySelector("#feels-like").innerHTML = Math.round(response.data.main.feels_like);
   document.querySelector("#currentCity").innerHTML = response.data.name;
   document.querySelector("#temperature").innerHTML = Math.round(celsiusTemperature);
   document.querySelector("#currentCondition").innerHTML = response.data.weather[0].main;
@@ -128,6 +129,7 @@ showCity(document.querySelector("#newCity").value);
 // Current button: current position & current temperature
 function showCurrentTemperature (response) {
     celsiusTemperature = response.data.main.temp;
+    document.querySelector("#feels-like").innerHTML = Math.round(response.data.main.feels_like);
   document.querySelector("#currentCity").innerHTML = response.data.name;
   document.querySelector("#temperature").innerHTML = Math.round(celsiusTemperature);
   let condition = response.data.weather[0].main;
